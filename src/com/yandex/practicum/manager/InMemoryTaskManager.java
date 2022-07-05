@@ -14,10 +14,12 @@ import com.yandex.practicum.pattern.Task;
 public class InMemoryTaskManager implements TaskManager {
     private Integer id = 0;
 
-    private final Map<Integer, Task> tasks = new HashMap<>();
-    private final Map<Integer, Subtask> subtasks = new HashMap<>();
-    private final Map<Integer, Epic> epics = new HashMap<>();
-    private final HistoryManager managerHistory = Managers.getDefaultHistory();
+
+     final Map<Integer, Task> tasks = new HashMap<>();
+     final Map<Integer, Subtask> subtasks = new HashMap<>();
+      final Map<Integer, Epic> epics = new HashMap<>();
+     final HistoryManager managerHistory = Managers.getDefaultHistory();
+
 
     @Override
     public void newTask(Task task) {
@@ -157,7 +159,7 @@ public class InMemoryTaskManager implements TaskManager {
         }
     }
 
-    //подправил
+
     @Override
     public boolean updateEpic(Epic epic) {
         if (epics.containsKey(epic.getId())) {

@@ -7,7 +7,7 @@ import com.yandex.practicum.pattern.Epic;
 import com.yandex.practicum.pattern.Subtask;
 import com.yandex.practicum.pattern.Task;
 
-public interface TaskManager {
+public interface TaskManager   {
 
     void newTask(Task task);
 

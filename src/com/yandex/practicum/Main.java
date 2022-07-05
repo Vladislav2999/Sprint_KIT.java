@@ -26,6 +26,13 @@ public class Main {
         managerDefault.moveSubtask(subtask);
         managerDefault.moveSubtask(subtask1);
 
+        /**
+         * правильно тут? последняя правка из 5 спринта, которая уже в комментарии была
+         */
+
+        managerDefault.getTaskId(task1.getId());
+        managerDefault.getTaskId(task.getId());
+
 
         managerDefault.getTaskId(1);
         managerDefault.getTaskId(2);

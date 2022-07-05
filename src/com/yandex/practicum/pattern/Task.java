@@ -1,8 +1,10 @@
 package com.yandex.practicum.pattern;
 
+
+
 import java.util.Objects;
 
-public class Task {
+public class Task  {
 
     private Status status;
     private String name;
