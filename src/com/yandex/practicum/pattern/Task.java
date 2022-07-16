@@ -6,17 +6,18 @@ import java.util.Objects;
 
 public class Task  {
 
+    private Type type;
     private Status status;
     private String name;
     private String description;
     private Integer id;
 
 
-    public Task(String name, String description, Status status) {
+    public Task(String name, String description, Status status, Type type) {
         this.status = status;
         this.name = name;
         this.description = description;
-
+        this.type = type;
     }
 
     public Integer getId() {
@@ -51,6 +52,13 @@ public class Task  {
         this.description = description;
     }
 
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
 
     @Override
     public String toString() {
@@ -75,6 +83,5 @@ public class Task  {
         Task task = (Task) obj;
         return id.equals(task.id) && name.equals(task.name) && description.equals(task.description) && status == task.status;
     }
-
 
 }
