@@ -1,5 +1,6 @@
 package com.yandex.practicum.pattern;
 
+import java.time.Duration;
 import java.util.Objects;
 
 public class Subtask extends Task {
@@ -11,14 +12,18 @@ public class Subtask extends Task {
         return epicId;
     }
 
-    public Subtask(String name, String description, Status status, Integer epicId, Type type) {
-        super(name, description, status, type);
-        this.epicId = epicId;
+    public Subtask(String name, String description, Status status, Integer epicId) {
+        super(name, description, status);
+        this.epicId=epicId;
+
+    }
+    public Subtask(String name, String description, long duration, String starTime, Status status, int epicId) {
+        super(name, description, duration, starTime,status);
+        this.epicId=epicId;
+
     }
 
     @Override
-
-
     public String toString() {
         return "com.yandex.practicum.pattern.Subtask{" +
                 "name='" + getName() + '\'' +

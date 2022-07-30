@@ -1,7 +1,12 @@
 package com.yandex.practicum.manager;
 
 
+
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
+
 
 import com.yandex.practicum.pattern.Epic;
 import com.yandex.practicum.pattern.Subtask;
@@ -9,11 +14,13 @@ import com.yandex.practicum.pattern.Task;
 
 public interface TaskManager   {
 
-    void newTask(Task task);
+    Task newTask(Task task);
 
     List<Task> getTaskAll();
 
     Task getTaskId(Integer id);
+
+    int getTaskId();
 
     boolean updateTask(Task task);
 
@@ -35,7 +42,14 @@ public interface TaskManager   {
 
     void moveEpic(Epic epic);
 
-    void addsSubtaskIdToEpic(Epic epic, Integer id);
+    void setTaskAndSubTaskDuration(Task task, long duration);
+
+
+    LocalDateTime getStartDataTime(Task task);
+
+    public long getTaskDuration(Task task);
+
+    LocalDateTime getEpicEndTime(List<Integer> listOfSubTaskId);
 
     List<Epic> getEpicAll();
 
@@ -50,4 +64,8 @@ public interface TaskManager   {
     List<Subtask> getSubtaskInEpicAll(Epic epic);
 
     List<Task> getHistory();
+
+    Set<Task> getPrioritizedTasks();
+
+    void getEndTime(Epic epic);
 }
